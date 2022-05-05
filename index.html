@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Igra za vežbanje slebog i brzog kucanja na tastaturi.">
+   <meta name="keywords" content="slepo kucanje, igra, ivica, stašuk, javascript igra">
+   <title>Typing Game</title>
+   <meta property="og:title" content="Typing Game" />
+   <meta property="og:type" content="website" />  
+   <meta property="og:url" content="https://stasuk.in.rs/games/typing-game/" />
+   <meta property="og:image" content="https://stasuk.in.rs/games/typing-game/img/feat-img.jpg" />
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="container">
+      <div class="start-btn">start</div>
+      <div class="endpoint"></div>
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+      <div class="line line-4"></div>
+      <div class="line line-5"></div>
+      <div class="line line-6"></div>
+      <div class="line line-7"></div>
+      <div class="line line-8"></div>
+      <div class="line line-9"></div>
+      <div class="line line-10"></div>
+      <div class="mask"></div>
+      <div class="score">0</div>
+      <div id="hall-of-fame">
+
+      </div>
+      <label for="playerName" class="label-player">Ime igrača:</label>
+      <input class="player" type="text" maxlength="10" value="NoName" name="playerName">
+   </div>
+   <div class="typing-line">
+      <input type="text" class="main-input">
+   </div>
+   <div class="uputstvo">
+      <h1>Typing Game - Uputstvo za upotrebu</h1>
+      <p>Prebaciti tastaturu na srpsku latinicu, upisati Vaše ime u odgovarajuće polje, kliknuti na START. Kucati reči koje se pojavljuju na levoj strani dovoljno brzo da ne nestanu tj. izađu iz dela za igru.</p>
+   </div>
+   <script src="js/srpski.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
