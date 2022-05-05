@@ -1,0 +1,235 @@
+// fontovi
+   @font-face {
+      font-family: 'Digital';
+      src: url('../fonts/digital.ttf') format('truetype');
+   }
+   $score-font: 'Digital', sans-serif;
+
+// boje
+   $bg-color: #1a1d21;
+   $gbg-color: #414b59;
+   $border-color: #ab7032;
+   $line-color: #45280a40;
+   $score-color: #fff9f2;
+
+* {
+   box-sizing: border-box;
+}
+html, body {
+   margin: 0;
+}
+body {
+   background-color: $bg-color;
+   font-family: 'Open Sans', sans-serif;
+}
+.container {
+   background-color: $gbg-color;
+   position: relative;
+   width: 800px;
+   height: 400px;
+   margin: 100px auto 10px;
+   border: 1px solid $border-color;
+   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4) inset;
+}
+.uputstvo {
+   width: 800px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   h1 {
+      color: lighten($color: $gbg-color, $amount: 20);
+      font-size: 28px;
+      line-height: 1.6em;
+      border-bottom: 1px solid lighten($color: $gbg-color, $amount: 0);
+   }
+   p {
+      color: lighten($color: $gbg-color, $amount: 20);
+      font-size: 18px;
+      line-height: 1.4em;
+   }
+}
+.typing-line {
+   position: relative;
+   width: 800px;
+   height: 40px;
+   background-color: $gbg-color;
+   margin: 0 auto;
+   border: 1px solid $border-color;
+   &::before {
+      position: absolute;
+      content: '⮞';
+      width: 38px;
+      height: 38px;
+      color: $score-color;
+      left: 10px;
+      font-size: 22px;
+      line-height: 38px;
+   }
+   .main-input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: $gbg-color;
+      color: $score-color;
+      padding-left: 36px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 22px;
+      line-height: 38px;
+      text-transform: uppercase;
+      outline: none;
+      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4) inset;
+   }
+}
+.start-btn {
+   width: 100px;
+   height: 40px;
+   border: $line-color;
+   background-color: $border-color;
+   line-height: 38px;
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 600;
+   border-radius: 40px;
+   position: absolute;
+   top: 180px;
+   left: 260px;
+   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.4);
+   z-index: 8;
+   transition: margin-top .3s ease-out, background-color .3s ease-out;
+   &:hover {
+      margin-top: 2px;
+      cursor: pointer;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.4);
+      background-color: darken($color: $border-color, $amount: 10%);
+   }
+}
+.endpoint {
+   position: absolute;
+   width: 1px;
+   height: 100%;
+   top: 0;
+   left: 620px;
+   background-color: $border-color;
+   z-index: 9;
+}
+.line {
+   position: absolute;
+   height: 40px;
+   width: 620px;
+   left: 0;
+   border-top: 1px solid $line-color;
+}
+.line-1 { top: 20px; }
+.line-2 { top: 60px; }
+.line-3 { top: 100px; }
+.line-4 { top: 140px; }
+.line-5 { top: 180px; }
+.line-6 { top: 220px; }
+.line-7 { top: 260px; }
+.line-8 { top: 300px; }
+.line-9 { top: 340px; }
+.line-10 { top: 380px; }
+.mask {
+   position: absolute;
+   width: 177px;
+   height: 398px;
+   top: 0;
+   left: 621px;
+   background-color: $gbg-color;
+}
+.score {
+   position: absolute;
+   font-family: $score-font;
+   font-size: 30px;
+   color: $score-color;
+   width: 160px;
+   background-color: $bg-color;
+   text-align: center;
+   left: 630px;
+   top: 10px;
+   border: 1px solid $border-color;
+   line-height: 40px;
+   z-index: 9;
+}
+#hall-of-fame {
+   position: absolute;
+   border: 1px solid $border-color;
+   width: 160px;
+   height: 230px;
+   left: 630px;
+   top: 60px;
+   background-color: $bg-color;
+   color: $score-color;
+   ul {
+      padding: 0 10px;
+      li {
+         list-style: none;
+         font-family: $score-font;
+         font-size: 16px;
+         display: flex;
+         justify-content: space-between;
+         padding: 2px 0;
+         p {
+            margin: 0 !important;
+         }
+      }
+   }
+}
+.player {
+   position: absolute;
+   border: 1px solid $border-color;
+   width: 160px;
+   height: 40px;
+   outline: none;
+   left: 630px;
+   top: 350px;
+   background-color: $bg-color;
+   color: $score-color;
+   font-size: 18px;
+   line-height: 38px;
+   padding: 0 20px;
+}
+.label-player {
+   position: absolute;
+   color: $score-color;
+   font-size: 16px;
+   line-height: 16px;
+   top: 330px;
+   left: 630px;
+}
+.rbr {
+   flex: 0 0 16px;
+   text-align: right;
+}
+.score-name {
+   text-transform: uppercase;
+   flex: 0 0 80px;
+}
+.score-score {
+   text-align: right;
+   flex: 0 0 30px;
+}
+span {
+   position: absolute;
+   top: -15px;
+   left: 0;
+   text-transform: uppercase;
+   background-color: #9acd32;
+   padding: 5px 10px;
+   height: 24px;
+   border-radius: 4px;
+   font-size: 14px;
+   line-height: 14px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 600;
+   border: 1px solid $border-color;
+   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4); 
+}
+.danger {
+   background-color: #b22222;
+   color: $score-color;
+}
